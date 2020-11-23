@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cross-document messaging example</title>
+    <script type="text/javascript" src="/webjars/jquery/3.4.1/jquery.js"></script>
+    <script>
+        window.onload = function () {
+            window.addEventListener("message", (event) => {
+                if (event.origin !== "http://localhost:8001") {
+                    console.log('wrong origin: ' + event.origin);
+                    return;
+                }
+                console.log('iframe received: ' + event.data);
+
+                $.get("/cdm-server", function (data, status) {
+                    event.source.postMessage("hello to parent from iframe! " + this.responseText, event.origin);
+                });
+            }, false);
+        };
+    </script>
+</head>
+<body>
+</body>
+</html>

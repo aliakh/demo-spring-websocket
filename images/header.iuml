@@ -1,0 +1,9 @@
+scale 1.1
+hide footbox
+skinparam monochrome true
+skinparam defaultFontName Source Sans Pro
+skinparam titleFontSize 15
+skinparam sequenceMessageAlign left
+skinparam participantBackgroundColor #white
+skinparam noteBackgroundColor #white
+skinparam sequenceGroupBackgroundColor #white

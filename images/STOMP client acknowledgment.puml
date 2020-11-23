@@ -1,0 +1,31 @@
+@startuml
+!include header.iuml
+
+client->>broker: SUBSCRIBE
+note left
+destination:/topic/tpc-0
+id:sub-0
+ask:client
+end note
+
+broker->>client: MESSAGE
+note right
+destination:/topic/tpc-0
+subscription:sub-0
+message-id:msg-0
+ask:id-0
+end note
+
+alt success
+client->>broker: ASK
+note left
+id:id-0
+end note
+else failure
+client->>broker: NAK
+note left
+id:id-0
+end note
+end
+
+@enduml

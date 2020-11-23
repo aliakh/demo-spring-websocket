@@ -1,0 +1,14 @@
+plugins {
+    id 'java'
+}
+
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version:'2.2.2.RELEASE'
+    implementation group: 'org.webjars', name: 'jquery', version:'3.4.1'
+}

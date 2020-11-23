@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>STOMP over WebSocket/SockJS example</title>
+    <link href="/webjars/bootstrap/4.4.1/css/bootstrap.css" rel="stylesheet">
+    <link href="/application.css" rel="stylesheet">
+    <script type="text/javascript" src="/webjars/sockjs-client/1.1.2/sockjs.js"></script>
+    <script type="text/javascript" src="/webjars/webstomp-client/1.2.6/dist/webstomp.js"></script>
+    <script type="text/javascript" src="/webjars/jquery/3.4.1/jquery.js"></script>
+    <script type="text/javascript" src="/application.js"></script>
+</head>
+<body>
+<div id="main-content" class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="connect">STOMP connection:</label>
+                    <button id="connect" class="btn btn-light" type="submit">Connect</button>
+                    <button id="disconnect" class="btn btn-light" type="submit" disabled="disabled">Disconnect
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <form class="form-inline">
+                <div class="form-group">
+                    <input type="text" id="output" class="form-control" placeholder="">
+                </div>
+                <button id="send" class="btn btn-light" type="submit" disabled="disabled">Send</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table id="conversation" class="table table-sm  table-striped">
+                <thead>
+                <tr>
+                    <th>Responses</th>
+                </tr>
+                </thead>
+                <tbody id="responses">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

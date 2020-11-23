@@ -1,0 +1,31 @@
+@startuml
+!include header.iuml
+
+client->>broker: CONNECT
+note left
+accept-version:1.2,1.1,1.0
+host:...
+<color:gray>login:...</color>
+<color:gray>passcode:...</color>
+<color:gray>heart-beat:10000,10000</color>
+end note
+
+broker->>client: CONNECTED
+note right
+version:1.2
+<color:gray>session:...</color>
+<color:gray>server:...</color>
+<color:gray>heart-beat:0,0</color>
+end note
+
+client->>broker: DISCONNECT
+note left
+<color:gray>receipt:rcp-0</color>
+end note
+
+broker->>client: <color:gray>RECEIPT</color>
+note right
+receipt-id:rcp-0
+end note
+
+@enduml

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebSocket/SockJS example</title>
+    <link href="/webjars/bootstrap/4.4.1/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/application.css" rel="stylesheet">
+    <script type="text/javascript" src="/webjars/sockjs-client/1.1.2/sockjs.js"></script>
+    <script type="text/javascript" src="/webjars/jquery/3.4.1/jquery.js"></script>
+    <script type="text/javascript" src="/js/application.js"></script>
+</head>
+<body>
+<div id="main-content" class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="connect">SockJS connection:</label>
+                    <button id="connect" class="btn btn-light" type="submit">Connect</button>
+                    <button id="disconnect" class="btn btn-light" type="submit" disabled="disabled">Disconnect</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <form class="form-inline">
+                <div class="form-group">
+                    <input type="text" id="request" class="form-control" placeholder="">
+                </div>
+                <button id="send" class="btn btn-light" type="submit" disabled="disabled">Send</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div>
+                <span>SockJS transport:</span>
+                <select id="transports">
+                    <option value="all">all</option>
+                    <option value="websocket">websocket</option>
+                    <option value="xhr-streaming">xhr-streaming</option>
+                    <option value="xdr-streaming">xdr-streaming</option>
+                    <option value="eventsource">eventsource</option>
+                    <option value="iframe-eventsource">iframe-eventsource</option>
+                    <option value="htmlfile">htmlfile</option>
+                    <option value="iframe-htmlfile">iframe-htmlfile</option>
+                    <option value="xhr-polling">xhr-polling</option>
+                    <option value="xdr-polling">xdr-polling</option>
+                    <option value="iframe-xhr-polling">iframe-xhr-polling</option>
+                    <option value="jsonp-polling">jsonp-polling</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table id="conversation" class="table table-sm  table-striped">
+                <thead>
+                <tr>
+                    <th>Responses</th>
+                </tr>
+                </thead>
+                <tbody id="responses">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

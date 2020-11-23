@@ -1,0 +1,29 @@
+@startuml
+!include header.iuml
+
+client->>broker: SUBSCRIBE
+note left
+destination:/topic/dst-0
+id:sub-0
+<color:gray>ask:auto</color>
+end note
+
+broker->>client: MESSAGE
+note right
+destination:/topic/dst-0
+subscription:sub-0
+message-id:msg-0
+end note
+broker->>client: MESSAGE
+note right
+destination:/topic/dst-0
+subscription:sub-0
+message-id:msg-1
+end note
+
+client->>broker: UNSUBSCRIBE
+note left
+id:sub-0
+end note
+
+@enduml

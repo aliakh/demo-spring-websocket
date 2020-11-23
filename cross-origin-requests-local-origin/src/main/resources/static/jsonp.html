@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSONP example</title>
+    <script>
+        function jsonpOnclick() {
+            const script = document.createElement("script");
+            script.src = "http://localhost:8002/time?callback=jsonpCallback";
+            document.body.appendChild(script);
+        }
+
+        function jsonpCallback(data) {
+            console.log('response: ' + JSON.stringify(data));
+            document.getElementById("response").innerHTML += "<b>time:</b> " + data.time + "<br/>";
+        }
+    </script>
+</head>
+<body>
+<button onclick="jsonpOnclick()">JSONP call</button>
+<div id="response"></div>
+</body>
+</html>

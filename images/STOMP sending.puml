@@ -1,0 +1,18 @@
+@startuml
+!include header.iuml
+
+client->>broker: SEND
+note left
+destination:/queue/dst-0
+end note
+
+client->>broker: SEND
+note left
+destination:/queue/dst-1
+content-length:4
+content-type:text/plain
+
+body
+end note
+
+@enduml

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CORS example</title>
+    <script type="text/javascript" src="/webjars/jquery/3.4.1/jquery.js"></script>
+</head>
+<script>
+    function response(data) {
+        console.log('response: ' + data);
+        document.getElementById("response").innerHTML += data + "<br/>";
+    }
+
+    function withoutOriginOnclick() {
+        $.get("http://localhost:8002/time-without-origin", function (data, status) {
+            response(data);
+        });
+    }
+
+    function anyOriginOnclick() {
+        $.get("http://localhost:8002/time-any-origin", function (data, status) {
+            response(data);
+        });
+    }
+
+    function explicitOriginOnclick() {
+        $.get("http://localhost:8002/time-explicit-origin", function (data, status) {
+            response(data);
+        });
+    }
+</script>
+<body>
+<div>
+    <button onclick="withoutOriginOnclick()">CORS call: without origin</button>
+</div>
+<div>
+    <button onclick="anyOriginOnclick()">CORS call: origin *</button>
+</div>
+<div>
+    <button onclick="explicitOriginOnclick()">CORS call: origin http://localhost:8001</button>
+</div>
+<div id="response"></div>
+</body>
+</html>

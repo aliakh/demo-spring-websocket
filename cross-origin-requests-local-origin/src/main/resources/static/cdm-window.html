@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cross-document messaging example</title>
+    <script>
+        window.onload = function () {
+            const popup = document.getElementById('ifrm').contentWindow;
+            popup.postMessage("hello to iframe from parent!", "http://localhost:8002");
+            window.addEventListener("message", (event) => {
+                if (event.origin !== "http://localhost:8002") {
+                    console.log('wrong origin: ' + event.origin);
+                    return;
+                }
+                console.log('parent received: ' + event.data);
+            }, false);
+        };
+    </script>
+</head>
+<body>
+<div>
+    <iframe id="ifrm" src="http://localhost:8002/cdm-iframe.html"></iframe>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>X-Frame-Options example</title>
+</head>
+<body>
+<div>
+    without X-Frame-Options
+</div>
+<div>
+    <iframe src="http://localhost:8002/html-no-xfo"></iframe>
+</div>
+<div>
+    X-Frame-Options=DENY
+</div>
+<div>
+    <iframe src="http://localhost:8002/html-xfo-deny"></iframe>
+</div>
+<div>
+    X-Frame-Options=SAMEORIGIN
+</div>
+<div>
+    <iframe src="http://localhost:8002/html-xfo-sameorigin"></iframe>
+</div>
+<div>
+    X-Frame-Options=ALLOW-FROM http://localhost:8001
+</div>
+<div>
+    <iframe src="http://localhost:8002/html-xfo-allowfrom"></iframe>
+</div>
+</body>
+</html>

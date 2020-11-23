@@ -1,0 +1,14 @@
+@startuml
+!include header.iuml
+
+client->>broker : <command>
+note left
+receipt:rcp-0
+end note
+
+broker->>client: RECEIPT
+note right
+receipt-id:rcp-0
+end note
+
+@enduml

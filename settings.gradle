@@ -1,0 +1,15 @@
+rootProject.name = 'demo-spring-websocket'
+
+include ':websocket-server'
+include ':websocket-client'
+
+include ':cross-origin-requests-local-origin'
+include ':cross-origin-requests-foreign-origin'
+
+include ':websocket-sockjs-server'
+include ':websocket-sockjs-client'
+
+include ':websocket-sockjs-stomp-server'
+include ':websocket-sockjs-stomp-client'
+
+include ':websocket-sockjs-stomp-highcharts'
